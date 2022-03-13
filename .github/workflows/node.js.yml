@@ -60,7 +60,7 @@ jobs:
         echo $word1
         echo $word2
         cat ./repob/file
-        sed -i 's|$word1|$word2|g' ./repob/file
+        sed -i 's|${word1}|${word2}|g' ./repob/file
         cat ./repob/file
     - name: check repob content
       run: |
