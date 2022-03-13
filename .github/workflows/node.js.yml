@@ -55,7 +55,9 @@ jobs:
         ls ./repob
     - name: Find and Replace
       run: |
-        word1="harbor.example.com/nsp_redis-exporter:v1.9.0"
+        pre_build_number=${BUILD_NUMBER}-1
+        echo $pre_build_number
+        word1="harbor.example.com/nsp_redis-exporter:${pre_build_number}"
         word2="harbor.example.com/nsp_redis-exporter:${BUILD_NUMBER}"
         echo $word1
         echo $word2
