@@ -59,7 +59,9 @@ jobs:
         word2="harbor.example.com/nsp_redis-exporter:${BUILD_NUMBER}"
         echo $word1
         echo $word2
-        sed -i -e 's|$word1|$word2|g' ./repob/file
+        cat ./repob/file
+        sed -i 's|$word1|$word2|g' ./repob/file
+        cat ./repob/file
     - name: check repob content
       run: |
         echo "value is $Build_Number"
