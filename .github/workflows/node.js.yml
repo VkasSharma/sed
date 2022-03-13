@@ -27,4 +27,4 @@ jobs:
       run: |
         echo "Build number is $BUILD_NUMBER"
         pwd
-        ls
+        cat ./values.yaml
