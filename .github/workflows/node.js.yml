@@ -22,8 +22,7 @@ jobs:
       run: echo "Build number is $BUILD_NUMBER"
     - uses: actions/checkout@v2
     - name: Find and Replace
-      uses: jacobtomlinson/gha-find-replace@v2
-      with:
-        find: "image"
-        replace: "world"
-        include: "**values.yaml"
+      run: |
+        ls
+        pwd
+        ls ./sed
