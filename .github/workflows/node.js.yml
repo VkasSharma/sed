@@ -21,8 +21,19 @@ jobs:
     - name: Print new build number
       run: echo "Build number is $BUILD_NUMBER"
     - uses: actions/checkout@v2
-    - name: Find and Replace
+    - name: first check
       run: |
         ls
         pwd
         cat values.yaml
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v2
+      with:
+        find: "image"
+        replace: "world"
+        include: "**values.yaml"
+    - name: final check
+      run: |
+        ls
+        pwd
+        cat values.yaml    
