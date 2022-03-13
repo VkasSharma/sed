@@ -54,11 +54,8 @@ jobs:
         cat ./repob/file
         ls ./repob
     - name: Find and Replace
-      uses: jacobtomlinson/gha-find-replace@v2
-      with:
-        find: "harbor.example.com/nsp_redis-exporter:v1.9.0"
-        replace: "harbor.example.com/nsp_redis-exporter:${BUILD_NUMBER}"
-        include: "**file"
+      run: |
+        sed 's/harbor.example.com/nsp_redis-exporter:v1.9.0/harbor.example.com/nsp_redis-exporter:${BUILD_NUMBER}/g' ./repob/file
     - name: check repob content
       run: |
         echo "value is $Build_Number"
