@@ -15,19 +15,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:   
     - name: Generate build number
+      id: vars
       uses: einaregilsson/build-number@v3
+      run: echo ::set-output name=docker_tag::$BUILD_NUMBER
       with:
         token: ${{secrets.github_token}}        
     - name: Print new build number
       run: |
         echo "Build number is $BUILD_NUMBER"
         Build_Number=$BUILD_NUMBER
+        echo "Build number is $BUILD_NUMBER"
     - uses: actions/checkout@v2
     - name: first check
       run: |
         echo "value is $Build_Number"
         echo "value is ${{ env.Build_Number }}"
-        echo "value is ${{env.Build_Number}}"
+        echo "value is ${{ steps.vars.outputs.docker_tag }}"
         ls
         pwd
         cat values.yaml
