@@ -46,6 +46,7 @@ jobs:
          path: ./repob
     - name: check repob content
       run: |
+        cat ./repob/file
         ls ./repob
     - name: Find and Replace
       uses: jacobtomlinson/gha-find-replace@v2
@@ -56,5 +57,5 @@ jobs:
     - name: check repob content
       run: |
         ls
-        cat ./repo/file       
+        cat ./repob/file       
         
