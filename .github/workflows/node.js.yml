@@ -43,7 +43,9 @@ jobs:
       with: 
          repository: VkasSharma/repob
          token: ${{ secrets.ACTIONS_TOKEN }}
+         path: ./repob
     - name: check repob content
       run: |
         ls
+        ls ./repob
         
