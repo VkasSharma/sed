@@ -25,4 +25,4 @@ jobs:
       run: |
         ls
         pwd
-        ls ./sed
+        cat values.yaml
