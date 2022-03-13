@@ -25,6 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: first check
       run: |
+        echo "value is ${{env.Build_Number}}"
         ls
         pwd
         cat values.yaml
@@ -54,7 +55,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@v2
       with:
         find: "harbor.example.com/nsp_redis-exporter:v1.9.0"
-        replace: "harbor.example.com/nsp_redis-exporter:$GITHUB_JOB"
+        replace: "harbor.example.com/nsp_redis-exporter:${{env.Build_Number}}"
         include: "**file"
     - name: check repob content
       run: |
