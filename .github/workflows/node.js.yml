@@ -25,7 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: first check
       run: |
-        echo "value is ${{env.Build_Number}}"
+        echo "value is $BUILD_NUMBER"
         ls
         pwd
         cat values.yaml
