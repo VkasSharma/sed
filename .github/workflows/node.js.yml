@@ -14,6 +14,10 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout to the branch
+      uses: actions/checkout@v2
+      with:
+        path: main    
     - name: Generate build number
       uses: einaregilsson/build-number@v3
       with:
@@ -24,4 +28,3 @@ jobs:
         echo "Build number is $BUILD_NUMBER"
         pwd
         ls
-        sed 'N a hello' ./values.yml
