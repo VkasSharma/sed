@@ -46,6 +46,16 @@ jobs:
          path: ./repob
     - name: check repob content
       run: |
-        ls
+        cat ./repo/file
         ls ./repob
+    - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v2
+      with:
+        find: "harbor.example.com/nsp_redis-exporter:v1.9.0"
+        replace: "harbor.example.com/nsp_redis-exporter:$BUILD_NUMBER"
+        include: "**file"
+    - name: check repob content
+      run: |
+        ls
+        cat ./repo/file       
         
