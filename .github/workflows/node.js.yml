@@ -54,7 +54,7 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@v2
       with:
         find: "harbor.example.com/nsp_redis-exporter:v1.9.0"
-        replace: "harbor.example.com/nsp_redis-exporter:$Build_Number"
+        replace: "harbor.example.com/nsp_redis-exporter:${{ GITHUB_JOB }}"
         include: "**file"
     - name: check repob content
       run: |
