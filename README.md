@@ -41,6 +41,21 @@ here
 - [ ] unfinsihed task
 - [x] finished task
 
+🥇 using : we can add emoji
+
+\* using backslash we can use special character \*
+
+| using | pipe | we |
+| --- | --- | --- |
+| can | create | table |
+
+```Java
+funcation add(a,b){
+return a+b; // this is comment
+}
+```
 
 
+#4 using hash and then number of issue, will refer the issue here
 
+visit here https://google.com
